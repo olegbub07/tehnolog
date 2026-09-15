@@ -138,6 +138,7 @@ a {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 600;
+  min-width: 0;
 }
 
 .brand__mark {
@@ -1143,6 +1144,7 @@ h2 em {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 .icon-btn,
