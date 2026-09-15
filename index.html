@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Технолог пищевых производств — профессия, которая создаёт вкус</title>
+  <meta name="description" content="Презентация для школьников: кто такой технолог пищевых производств, чем занимается, где учиться и сколько зарабатывает." />
+  <meta property="og:title" content="Технолог пищевых производств" />
+  <meta property="og:description" content="Кто придумывает вкус и отвечает за безопасность еды. Презентация для профориентации." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://olegbub07.github.io/tehnolog/images/hero.jpg" />
+  <meta name="theme-color" content="#16110e" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231A1410'/%3E%3Cpath d='M32 10c1.2 8 4 14 10 18-6 2-10 8-10 18-1.2-8-4-14-10-18 6-2 10-8 10-18z' fill='%23C9A227'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <div class="preloader" id="preloader">
+    <div class="preloader__mark">
+      <svg viewBox="0 0 64 64" width="48" height="48" aria-hidden="true">
+        <path d="M32 6c1.4 10 5 17 12 22-7 3-12 10-12 22-1.4-10-5-17-12-22 7-3 12-10 12-22z" fill="currentColor"/>
+      </svg>
+    </div>
+    <p class="preloader__word">Вкус · Наука · Ремесло</p>
+  </div>
+
+  <header class="topbar" id="topbar">
+    <a class="brand js-nav" href="#hero">
+      <span class="brand__mark" aria-hidden="true"></span>
+      <span class="brand__name">Пищевые технологии</span>
+    </a>
+    <nav class="topbar__nav" aria-label="Разделы">
+      <a class="js-nav" href="#who">Кто это</a>
+      <a class="js-nav" href="#work">Работа</a>
+      <a class="js-nav" href="#path">Учёба</a>
+      <a class="js-nav" href="#pay">Карьера</a>
+      <a class="js-nav" href="#quiz">Тест</a>
+    </nav>
+    <div class="topbar__actions">
+      <button class="icon-btn" id="shareBtn" type="button" title="Скопировать ссылку">Поделиться</button>
+      <button class="icon-btn" id="helpBtn" type="button" title="Подсказки" aria-label="Подсказки">?</button>
+      <button class="btn-ghost" id="fsBtn" type="button">Полный экран</button>
+      <button class="burger" id="menuBtn" type="button" aria-label="Меню" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" hidden>
+    <nav class="menu__nav" aria-label="Мобильное меню">
+      <a class="js-nav" href="#hero">Старт</a>
+      <a class="js-nav" href="#who">Кто это</a>
+      <a class="js-nav" href="#work">Чем занят</a>
+      <a class="js-nav" href="#where">Где работает</a>
+      <a class="js-nav" href="#path">Учёба</a>
+      <a class="js-nav" href="#pay">Карьера</a>
+      <a class="js-nav" href="#faq">Вопросы</a>
+      <a class="js-nav" href="#quiz">Тест</a>
+    </nav>
+  </div>
+
+  <div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
+  <nav class="dots" id="dots" aria-label="Слайды презентации"></nav>
+  <div class="counter" id="counter" aria-live="polite">01 / 13</div>
+
+  <main>
+    <section class="slide hero" id="hero" data-title="Старт" data-note="Представьтесь. Спросите класс: кто придумал йогурт на полке магазина?">
+      <div class="hero__media">
+        <img src="images/hero.jpg" alt="Лаборатория пищевых технологий в тёплом свете" fetchpriority="high" />
+        <div class="hero__veil"></div>
+      </div>
+      <div class="hero__inner">
+        <p class="kicker fade">Школьная профориентация</p>
+        <h1 class="hero__title fade">
+          Технолог<br />
+          <em>пищевых</em><br />
+          производств
+        </h1>
+        <p class="hero__lead fade">Человек, который придумывает вкус и отвечает за то, чтобы еда была безопасной.</p>
+        <div class="hero__cta fade">
+          <a class="btn-solid js-nav" href="#who">Смотреть профессию</a>
+          <a class="btn-line js-nav" href="#quiz">Пройти тест</a>
+        </div>
+      </div>
+      <div class="scroll-hint" aria-hidden="true"><span></span></div>
+    </section>
+
+    <section class="slide quote-slide" id="quote" data-title="Зацепка" data-note="Пауза. Пусть дочитают. Потом: «за каждым продуктом стоит человек».">
+      <div class="quote-slide__bg">
+        <img src="images/wheat.jpg" alt="" />
+      </div>
+      <blockquote class="big-quote">
+        <p>Каждый продукт<br />в магазине<br />когда-то<br /><em>придумал человек.</em></p>
+        <cite>Йогурт, хлеб, шоколад, сыр — за каждым стоит технолог.</cite>
+      </blockquote>
+    </section>
+
+    <section class="slide who" id="who" data-title="Кто это" data-note="Подчеркните: это не повар и не продавец. Инженер + химик + дегустатор.">
+      <div class="who__grid">
+        <div class="who__copy">
+          <p class="kicker kicker--dark">01 · Профессия</p>
+          <h2>Не повар.<br />Не продавец.<br /><em>Инженер вкуса.</em></h2>
+          <p class="lede">Технолог пищевых производств разрабатывает рецептуры, запускает линии и следит, чтобы продукт получился таким, каким его задумали — вкусным, стабильным и безопасным.</p>
+          <p class="body">Если хлеб осел, йогурт получился слишком кислым, а партия шоколада побелела — разбирается он. Это работа на стыке химии, биологии и ремесла. Результат можно попробовать.</p>
+        </div>
+        <figure class="who__photo">
+          <img src="images/tasting.jpg" alt="Работа технолога с образцом в лаборатории" loading="lazy" />
+          <figcaption>Лаборатория · контроль образца</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="slide work" id="work" data-title="Чем занят" data-note="Пройдите 6 карточек. На словах HACCP и СанПиН можно кликнуть — всплывёт пояснение.">
+      <div class="work__head">
+        <p class="kicker kicker--dark">02 · Будни</p>
+        <h2>Чем он <em>занят</em> целый день</h2>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="card__n">01</span>
+          <h3>Рецептура</h3>
+          <p>Считает граммы, температуры и культуры. Придумывает новые продукты — от безлактозного молока до растительного фарша.</p>
+        </article>
+        <article class="card">
+          <span class="card__n">02</span>
+          <h3>Качество</h3>
+          <p>Берёт пробы, смотрит цвет, вкус, запах, кислотность. Сверяет с ГОСТами и внутренними стандартами завода.</p>
+        </article>
+        <article class="card">
+          <span class="card__n">03</span>
+          <h3>Безопасность</h3>
+          <p>Следит за <button class="term" type="button" data-tip="Санитарные правила: как мыть руки, хранить сырьё, не допустить микробов на производство.">СанПиН</button> и <button class="term" type="button" data-tip="HACCP — система, где на каждом шаге производства ищут, где еда может стать опасной, и это предотвращают.">HACCP</button>. Его работа — чтобы партия не попала на стол, если с ней что-то не так.</p>
+        </article>
+        <article class="card">
+          <span class="card__n">04</span>
+          <h3>Линия</h3>
+          <p>Температура, время, давление, скорость. Производство должно идти как часы — от сырья до упаковки.</p>
+        </article>
+        <article class="card">
+          <span class="card__n">05</span>
+          <h3>Новинки</h3>
+          <p>Фудтех: функциональное питание, альтернативы сахару, новые вкусы. Технолог — тот, кто переводит идею в продукт.</p>
+        </article>
+        <article class="card">
+          <span class="card__n">06</span>
+          <h3>Документы</h3>
+          <p>Технологические карты, спецификации, акты. Без бумаги продукт не выйдет в магазин — это тоже часть профессии.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="slide day" id="day" data-title="День" data-note="Сравните с школьным расписанием: у технолога тоже смена с понятными блоками.">
+      <div class="day__media">
+        <img src="images/still-life.jpg" alt="Натюрморт пищевой лаборатории" loading="lazy" />
+      </div>
+      <div class="day__copy">
+        <p class="kicker kicker--light">03 · Один день</p>
+        <h2>Как выглядит<br /><em>обычная смена</em></h2>
+        <ol class="timeline">
+          <li>
+            <time>08:30</time>
+            <div>
+              <strong>Лаборатория</strong>
+              <span>Входной контроль сырья: молоко, мука, какао — всё проверяют до цеха.</span>
+            </div>
+          </li>
+          <li>
+            <time>11:00</time>
+            <div>
+              <strong>Обход линий</strong>
+              <span>Смотрит режимы, разговаривает с операторами, ловит отклонения.</span>
+            </div>
+          </li>
+          <li>
+            <time>14:00</time>
+            <div>
+              <strong>Дегустация</strong>
+              <span>Опытная партия. Вкус, текстура, послевкусие — решение «в серию» или «на доработку».</span>
+            </div>
+          </li>
+          <li>
+            <time>16:30</time>
+            <div>
+              <strong>Корректировка</strong>
+              <span>Чуть меньше закваски, другая температура. Завтра — новая проба.</span>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="slide where" id="where" data-title="Где работает" data-note="Кликните по фото — откроется карточка отрасли. Можно дать кликнуть ученику.">
+      <div class="where__head">
+        <p class="kicker kicker--dark">04 · География вкуса</p>
+        <h2>Где работает <em>технолог</em></h2>
+        <p class="lede">Пищевая промышленность — одна из самых стабильных. Люди едят каждый день, в любом городе. Нажмите на фото, чтобы открыть отрасль.</p>
+      </div>
+      <div class="mosaic">
+        <figure class="mosaic__item mosaic__item--lg" data-industry="bread" tabindex="0" role="button">
+          <img src="images/bread.jpg" alt="Свежий хлеб" loading="lazy" />
+          <figcaption>
+            <strong>Хлеб и мука</strong>
+            <span>Нажмите, чтобы открыть</span>
+          </figcaption>
+        </figure>
+        <figure class="mosaic__item" data-industry="dairy" tabindex="0" role="button">
+          <img src="images/dairy.jpg" alt="Молоко" loading="lazy" />
+          <figcaption>
+            <strong>Молоко</strong>
+            <span>Нажмите, чтобы открыть</span>
+          </figcaption>
+        </figure>
+        <figure class="mosaic__item" data-industry="sweet" tabindex="0" role="button">
+          <img src="images/chocolate.jpg" alt="Шоколад" loading="lazy" />
+          <figcaption>
+            <strong>Сладости</strong>
+            <span>Нажмите, чтобы открыть</span>
+          </figcaption>
+        </figure>
+        <figure class="mosaic__item mosaic__item--wide" data-industry="plant" tabindex="0" role="button">
+          <img src="images/production.jpg" alt="Пищевое производство" loading="lazy" />
+          <figcaption>
+            <strong>Заводы и комбинаты</strong>
+            <span>Нажмите, чтобы открыть</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="slide skills" id="skills" data-title="Качества" data-note="Спросите: кто любит химию? Кто любит готовить? Технологу ближе первое, но пригодится и второе.">
+      <div class="skills__inner">
+        <div>
+          <p class="kicker kicker--dark">05 · Характер</p>
+          <h2>Кому это <em>подойдёт</em></h2>
+          <p class="lede">Не обязательно любить готовить дома. Важно любить разбирать, как устроено.</p>
+        </div>
+        <ul class="skill-list">
+          <li>
+            <span>Химия и биология</span>
+            <b>Как молоко становится сыром, почему тесто растёт, что происходит при нагреве.</b>
+          </li>
+          <li>
+            <span>Точность</span>
+            <b>Грамм и градус решают, получится продукт или партия уйдёт в брак.</b>
+          </li>
+          <li>
+            <span>Любопытный язык</span>
+            <b>Нужно чувствовать вкус и уметь описать его словами, а не только «вкусно».</b>
+          </li>
+          <li>
+            <span>Спокойствие</span>
+            <b>Когда линия встала, технолог не паникует — ищет причину.</b>
+          </li>
+          <li>
+            <span>Ответственность</span>
+            <b>Его решения едят тысячи людей. Это серьёзно — и в этом смысл.</b>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="slide path" id="path" data-title="Учёба" data-note="После 9 класса — колледж. После 11 — колледж или вуз. Не запугивайте вузом: колледж уже профессия.">
+      <p class="kicker kicker--dark">06 · Маршрут</p>
+      <h2>Как стать технологом</h2>
+      <div class="path-grid">
+        <article class="path-card">
+          <p class="path-card__from">После 9 класса</p>
+          <h3>Колледж</h3>
+          <p class="path-card__time">3 года 10 месяцев</p>
+          <p>Специальность «Технология продуктов питания». Квалификация — техник-технолог. Можно выйти на работу раньше сверстников из вуза.</p>
+        </article>
+        <article class="path-card path-card--accent">
+          <p class="path-card__from">После 11 класса</p>
+          <h3>Колледж или вуз</h3>
+          <p class="path-card__time">2 года 10 мес. · или 4 года</p>
+          <p>Колледж — быстрее к практике. Вуз (19.03.02, 19.03.03) — глубже химия, инженерия, путь к главному технологу и науке.</p>
+        </article>
+        <article class="path-card">
+          <p class="path-card__from">Дальше</p>
+          <h3>Производство</h3>
+          <p class="path-card__time">с первого года</p>
+          <p>Младший технолог → технолог смены → старший → главный. Можно уйти в разработку новых продуктов — <button class="term term--on-light" type="button" data-tip="R&amp;D — отдел разработки: придумывают новые продукты, которые потом встанут на линию.">R&amp;D</button>.</p>
+        </article>
+      </div>
+      <p class="path-note">На крупных заводах часто ждут высшее образование. Колледж — сильный старт, вуз — потолок выше.</p>
+    </section>
+
+    <section class="slide pay" id="pay" data-title="Карьера" data-note="Цифры ориентировочные по России, 2026. В регионах меньше, в Москве и на брендах — больше.">
+      <div class="pay__bg">
+        <img src="images/production.jpg" alt="" loading="lazy" />
+      </div>
+      <div class="pay__inner">
+        <p class="kicker kicker--light">07 · Цифры</p>
+        <h2>Сколько платят<br />и куда расти</h2>
+        <div class="pay-row">
+          <article>
+            <span>Старт</span>
+            <strong>45–75</strong>
+            <em>тыс. ₽ в месяц</em>
+            <p>Первый год, помощник технолога, лаборатория.</p>
+          </article>
+          <article class="is-main">
+            <span>В среднем</span>
+            <strong>~80</strong>
+            <em>тыс. ₽ в месяц</em>
+            <p>Ориентир рынка по России, 2026 год.</p>
+          </article>
+          <article>
+            <span>Главный технолог</span>
+            <strong>120–200</strong>
+            <em>тыс. ₽ в месяц</em>
+            <p>Опыт от трёх–шести лет, крупные комбинаты.</p>
+          </article>
+        </div>
+        <p class="pay-foot">Зарплата зависит от региона, отрасли и того, запускаешь ли ты новые продукты. В Москве и на больших брендах — выше.</p>
+      </div>
+    </section>
+
+    <section class="slide why" id="why" data-title="Зачем" data-note="Смысл профессии для подростков: видимый результат, стабильная отрасль, будущее еды.">
+      <p class="kicker kicker--dark">08 · Смысл</p>
+      <h2>Почему это <em>круто</em></h2>
+      <div class="why-grid">
+        <article>
+          <h3>Ты создаёшь то, что едят</h3>
+          <p>Не отчёт в папке — продукт на полке. Можно прийти в магазин и увидеть свою работу.</p>
+        </article>
+        <article>
+          <h3>Отрасль не исчезает</h3>
+          <p>Люди всегда будут есть. Заводы, пекарни и молочные комбинаты нужны в любом городе.</p>
+        </article>
+        <article>
+          <h3>Это про будущее еды</h3>
+          <p>Растительное мясо, безлактозное, спортпит, персональное питание — фудтех растёт прямо сейчас.</p>
+        </article>
+        <article>
+          <h3>Наука плюс руки</h3>
+          <p>Для тех, кому мало одной теории и мало одной кухни. Здесь есть и формула, и вкус.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="slide faq" id="faq" data-title="Вопросы" data-note="Откройте 1–2 вопроса голосом класса. Остальное можно оставить на самостоятельный клик.">
+      <p class="kicker kicker--dark">09 · Спрашивают чаще всего</p>
+      <h2>Коротко по делу</h2>
+      <div class="faq-list" id="faqList">
+        <details>
+          <summary>Это то же самое, что повар?</summary>
+          <p>Нет. Повар готовит блюдо здесь и сейчас. Технолог придумывает, как сделать тонны одинакового продукта — безопасно, вкусно и по рецептуре. На заводе он ближе к инженеру, чем к кухне ресторана.</p>
+        </details>
+        <details>
+          <summary>Можно пойти после 9 класса?</summary>
+          <p>Да. Колледж, около 3 лет 10 месяцев, квалификация «техник-технолог». После 11 класса путь короче: колледж около 2 лет 10 месяцев или вуз 4 года.</p>
+        </details>
+        <details>
+          <summary>Нужно ли любить готовить?</summary>
+          <p>Не обязательно. Важнее химия, аккуратность и интерес к тому, как еда устроена. Любить вкус — плюс, но это не кулинарный кружок.</p>
+        </details>
+        <details>
+          <summary>Где потом работать?</summary>
+          <p>Хлебозаводы, молочные комбинаты, кондитерские фабрики, мясопереработка, напитки, общепит, лаборатории качества и отделы новых продуктов.</p>
+        </details>
+        <details>
+          <summary>Это только для девочек или только для мальчиков?</summary>
+          <p>Ни то ни другое. На производстве и в лабораториях работают и те и другие. Решают голова, вкус и ответственность, а не пол.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="slide quiz" id="quiz" data-title="Тест" data-note="Дайте пройти 2–3 ученикам вслух или всем с телефона по ссылке. Клавиши 1 — да, 2 — нет.">
+      <div class="quiz__inner">
+        <p class="kicker kicker--dark">10 · Проверка</p>
+        <h2>Это про тебя?</h2>
+        <p class="lede">Пять коротких вопросов. Честно, без правильных ответов — только совпадение с профессией. На клавиатуре: <kbd>1</kbd> да, <kbd>2</kbd> нет.</p>
+
+        <div id="quizCard" class="quiz-card">
+          <div class="quiz-card__top">
+            <span id="quizStep">Вопрос 1 из 5</span>
+            <div class="quiz-bar"><i id="quizBar"></i></div>
+          </div>
+          <p class="quiz-q" id="quizQ"></p>
+          <div class="quiz-actions">
+            <button type="button" class="btn-yes" data-val="1">Да, это я</button>
+            <button type="button" class="btn-no" data-val="0">Скорее нет</button>
+          </div>
+        </div>
+
+        <div id="quizResult" class="quiz-result" hidden>
+          <p class="quiz-result__n" id="quizScore"></p>
+          <h3 id="quizTitle"></h3>
+          <p id="quizText"></p>
+          <div class="quiz-result__actions">
+            <button type="button" class="btn-reset" id="quizReset">Пройти ещё раз</button>
+            <button type="button" class="btn-line" id="quizShare">Поделиться результатом</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide finale" id="finale" data-title="Финал" data-note="Поблагодарите. Оставьте ссылку на сайте — пусть откроют дома. Кнопка «Поделиться» копирует адрес.">
+      <div class="finale__media">
+        <img src="images/wheat.jpg" alt="" loading="lazy" />
+        <div class="finale__veil"></div>
+      </div>
+      <div class="finale__copy">
+        <p class="kicker">До встречи на производстве</p>
+        <h2>Еда не появляется<br />сама по себе.</h2>
+        <p>Её придумывают люди, которым интересны и формула, и вкус. Если после этой встречи остался вопрос — задай его. Технолог пищевых производств всегда где-то рядом: в хлебе, в молоке, в шоколаде.</p>
+        <div class="finale__actions">
+          <button type="button" class="btn-solid" id="copyLinkBtn">Скопировать ссылку на сайт</button>
+          <a class="btn-line js-nav" href="#quiz">К тесту</a>
+        </div>
+        <p class="finale__sign">Профориентация · Технолог пищевых производств</p>
+      </div>
+    </section>
+  </main>
+
+  <aside class="drawer" id="drawer" hidden>
+    <button class="drawer__close" id="drawerClose" type="button" aria-label="Закрыть">×</button>
+    <p class="kicker kicker--dark" id="drawerKicker">Отрасль</p>
+    <h3 id="drawerTitle"></h3>
+    <p id="drawerText"></p>
+    <ul id="drawerList"></ul>
+  </aside>
+  <div class="backdrop" id="backdrop" hidden></div>
+
+  <div class="help" id="help" hidden role="dialog" aria-labelledby="helpTitle">
+    <div class="help__card">
+      <h3 id="helpTitle">Как смотреть</h3>
+      <ul>
+        <li><kbd>→</kbd> <kbd>←</kbd> слайды</li>
+        <li><kbd>F</kbd> полный экран</li>
+        <li><kbd>N</kbd> заметки для выступающего</li>
+        <li><kbd>?</kbd> это окно</li>
+        <li>На тесте: <kbd>1</kbd> да, <kbd>2</kbd> нет</li>
+        <li>На телефоне: свайп вверх / вниз</li>
+      </ul>
+      <button type="button" class="btn-solid" id="helpClose">Понятно</button>
+    </div>
+  </div>
+
+  <div class="notes" id="notes" hidden>
+    <span>Заметка</span>
+    <p id="notesText"></p>
+  </div>
+
+  <div class="tip" id="tip" hidden></div>
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
