@@ -1168,6 +1168,17 @@ h2 em {
   height: 40px;
   border-radius: 50%;
   position: relative;
+  background: rgba(22, 17, 14, 0.55);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+.topbar:not(.is-blend) .burger {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.topbar:not(.is-blend) .burger span {
+  background: var(--cream);
 }
 
 .burger span {
