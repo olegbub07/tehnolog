@@ -1483,9 +1483,16 @@ h2 em {
   }
 
   .topbar__nav,
-  .btn-ghost,
-  .icon-btn:first-of-type {
-    display: none;
+  #shareBtn,
+  #fsBtn {
+    display: none !important;
+  }
+
+  .brand__name {
+    max-width: 46vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .burger {
