@@ -1181,6 +1181,16 @@ h2 em {
 .burger span:first-child { top: 15px; }
 .burger span:last-child { bottom: 15px; }
 
+.menu[hidden],
+.help[hidden],
+.drawer[hidden],
+.backdrop[hidden],
+.toast[hidden],
+.tip[hidden],
+.notes[hidden] {
+  display: none !important;
+}
+
 .menu {
   position: fixed;
   inset: 0;
