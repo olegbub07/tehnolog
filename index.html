@@ -2,7 +2,21 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <script>
+    (function () {
+      if (/\/tehnolog(\/|$)/.test(location.pathname)) {
+        var base = document.createElement("base");
+        base.href = "/tehnolog/";
+        document.head.appendChild(base);
+      }
+    })();
+  </script>
+  <style>
+    html, body { margin: 0; background: #16110e; color: #f3ece1; }
+    .preloader { position: fixed; inset: 0; z-index: 100; background: #16110e; }
+    .preloader.is-gone { display: none !important; visibility: hidden !important; }
+  </style>
   <title>Технолог пищевых производств — профессия, которая создаёт вкус</title>
   <meta name="description" content="Презентация для школьников: кто такой технолог пищевых производств, чем занимается, где учиться и сколько зарабатывает." />
   <meta property="og:title" content="Технолог пищевых производств" />
@@ -14,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=10" />
+  <link rel="stylesheet" href="css/style.css?v=11" />
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -430,6 +444,19 @@
   <div class="tip" id="tip" hidden></div>
   <div class="toast" id="toast" hidden></div>
 
-  <script src="js/app.js?v=7"></script>
+  <script src="js/app.js?v=11"></script>
+  <script>
+    (function () {
+      function hideBoot() {
+        var p = document.getElementById("preloader");
+        var t = document.getElementById("topbar");
+        if (p) p.classList.add("is-gone");
+        if (t) t.classList.add("is-on");
+      }
+      document.addEventListener("DOMContentLoaded", function () { setTimeout(hideBoot, 300); });
+      window.addEventListener("load", hideBoot);
+      setTimeout(hideBoot, 1200);
+    })();
+  </script>
 </body>
 </html>

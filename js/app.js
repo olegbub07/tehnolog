@@ -22,13 +22,15 @@ if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   document.documentElement.classList.add("reduce-motion");
 }
 
-slides.forEach((slide, i) => {
-  const btn = document.createElement("button");
-  btn.type = "button";
-  btn.title = slide.dataset.title || `Слайд ${i + 1}`;
-  btn.addEventListener("click", () => go(i));
-  dots.appendChild(btn);
-});
+if (dots) {
+  slides.forEach((slide, i) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.title = slide.dataset.title || `Слайд ${i + 1}`;
+    btn.addEventListener("click", () => go(i));
+    dots.appendChild(btn);
+  });
+}
 
 const dotButtons = [...dots.querySelectorAll("button")];
 
@@ -57,7 +59,7 @@ function setActive(index, writeHash) {
   current = index;
   const dark = isDarkSlide(index);
   const ratio = slides.length > 1 ? index / (slides.length - 1) : 0;
-  progressBar.style.width = `${ratio * 100}%`;
+  if (progressBar) progressBar.style.width = `${ratio * 100}%`;
   topbar.classList.toggle("is-blend", dark);
   if (counter) counter.textContent = `${pad(index + 1)} / ${pad(slides.length)}`;
   dotButtons.forEach((btn, i) => {
@@ -69,7 +71,9 @@ function setActive(index, writeHash) {
     link.classList.toggle("is-current", id === slides[index].id);
   });
   if (writeHash) {
-    history.replaceState(null, "", `#${slides[index].id}`);
+    try {
+      history.replaceState(null, "", `#${slides[index].id}`);
+    } catch (err) {}
   }
 }
 
@@ -103,6 +107,7 @@ function toggleFullscreen() {
 }
 
 function showToast(text) {
+  if (!toast) return;
   toast.textContent = text;
   toast.hidden = false;
   clearTimeout(toastTimer);
@@ -211,15 +216,21 @@ window.addEventListener("touchend", (event) => {
   else go(current - 1);
 }, { passive: true });
 
+function hideBoot() {
+  preloader?.classList.add("is-gone");
+  topbar?.classList.add("is-on");
+}
+
+document.addEventListener("DOMContentLoaded", hideBoot);
 window.addEventListener("load", () => {
-  setTimeout(() => preloader.classList.add("is-gone"), 600);
-  setTimeout(() => topbar.classList.add("is-on"), 800);
+  hideBoot();
   const start = indexFromHash();
   if (start > 0) {
     slides[start].scrollIntoView({ behavior: "auto", block: "start" });
     setActive(start, true);
   }
 });
+setTimeout(hideBoot, 800);
 
 const industries = {
   bread: {
@@ -276,8 +287,8 @@ document.querySelectorAll("[data-industry]").forEach((el) => {
   });
 });
 
-document.getElementById("drawerClose").addEventListener("click", closeOverlays);
-backdrop.addEventListener("click", closeOverlays);
+document.getElementById("drawerClose")?.addEventListener("click", closeOverlays);
+backdrop?.addEventListener("click", closeOverlays);
 
 document.querySelectorAll(".term").forEach((btn) => {
   btn.addEventListener("click", (event) => {
@@ -352,7 +363,7 @@ document.querySelectorAll(".quiz-actions button").forEach((btn) => {
   btn.addEventListener("click", () => answerQuiz(btn.dataset.val));
 });
 
-document.getElementById("quizReset").addEventListener("click", () => {
+document.getElementById("quizReset")?.addEventListener("click", () => {
   qIndex = 0;
   score = 0;
   quizResult.hidden = true;
@@ -360,11 +371,13 @@ document.getElementById("quizReset").addEventListener("click", () => {
   renderQuestion();
 });
 
-document.getElementById("quizShare").addEventListener("click", () => {
+document.getElementById("quizShare")?.addEventListener("click", () => {
   copyLink(`${location.origin}${location.pathname}#quiz — ${lastResult}`);
 });
 
-document.getElementById("copyLinkBtn").addEventListener("click", () => copyLink(location.href.split("#")[0]));
+document.getElementById("copyLinkBtn")?.addEventListener("click", () => copyLink(location.href.split("#")[0]));
 
-renderQuestion();
-setActive(indexFromHash(), false);
+try {
+  renderQuestion();
+  setActive(indexFromHash(), false);
+} catch (err) {}
