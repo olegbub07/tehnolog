@@ -1165,13 +1165,26 @@ h2 em {
 }
 
 .burger {
-  display: none;
-  width: 40px;
-  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 90;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  position: relative;
-  background: rgba(22, 17, 14, 0.55);
-  border-color: rgba(255, 255, 255, 0.55);
+  background: var(--honey);
+  border: 0;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+@media (min-width: 981px) {
+  .burger {
+    display: none !important;
+  }
 }
 
 .topbar:not(.is-blend) .burger {
@@ -1498,13 +1511,32 @@ h2 em {
   }
 
   .burger {
-    display: block;
-    background: rgba(255, 255, 255, 0.14);
-    border-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    z-index: 90;
+    width: 44px;
+    height: 44px;
+    background: var(--honey);
+    border: 0;
   }
 
   .burger span {
-    background: #fff;
+    background: var(--ink);
+  }
+
+  .slide {
+    min-height: auto;
+    scroll-snap-align: none;
+  }
+
+  .hero,
+  .quote-slide,
+  .finale {
+    min-height: 100dvh;
   }
 
   .counter {

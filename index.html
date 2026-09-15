@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=6" />
+  <link rel="stylesheet" href="css/style.css?v=10" />
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -42,13 +42,13 @@
     </nav>
     <div class="topbar__actions">
       <button class="icon-btn" id="shareBtn" type="button" title="Скопировать ссылку">Поделиться</button>
-      <button class="icon-btn" id="helpBtn" type="button" title="Подсказки" aria-label="Подсказки">?</button>
       <button class="btn-ghost" id="fsBtn" type="button">Полный экран</button>
-      <button class="burger" id="menuBtn" type="button" aria-label="Меню" aria-expanded="false">
-        <span></span><span></span>
-      </button>
     </div>
   </header>
+
+  <button class="burger" id="menuBtn" type="button" aria-label="Меню" aria-expanded="false">
+    <span></span><span></span>
+  </button>
 
   <div class="menu" id="menu" hidden>
     <nav class="menu__nav" aria-label="Мобильное меню">
@@ -374,7 +374,7 @@
       <div class="quiz__inner">
         <p class="kicker kicker--dark">10 · Проверка</p>
         <h2>Это про тебя?</h2>
-        <p class="lede">Пять коротких вопросов. Честно, без правильных ответов — только совпадение с профессией. На клавиатуре: <kbd>1</kbd> да, <kbd>2</kbd> нет.</p>
+        <p class="lede">Пять коротких вопросов. Честно, без правильных ответов — только совпадение с профессией.</p>
 
         <div id="quizCard" class="quiz-card">
           <div class="quiz-card__top">
@@ -427,29 +427,9 @@
   </aside>
   <div class="backdrop" id="backdrop" hidden></div>
 
-  <div class="help" id="help" hidden role="dialog" aria-labelledby="helpTitle">
-    <div class="help__card">
-      <h3 id="helpTitle">Как смотреть</h3>
-      <ul>
-        <li><kbd>→</kbd> <kbd>←</kbd> слайды</li>
-        <li><kbd>F</kbd> полный экран</li>
-        <li><kbd>N</kbd> заметки для выступающего</li>
-        <li><kbd>?</kbd> это окно</li>
-        <li>На тесте: <kbd>1</kbd> да, <kbd>2</kbd> нет</li>
-        <li>На телефоне: свайп вверх / вниз</li>
-      </ul>
-      <button type="button" class="btn-solid" id="helpClose">Понятно</button>
-    </div>
-  </div>
-
-  <div class="notes" id="notes" hidden>
-    <span>Заметка</span>
-    <p id="notesText"></p>
-  </div>
-
   <div class="tip" id="tip" hidden></div>
   <div class="toast" id="toast" hidden></div>
 
-  <script src="js/app.js?v=3"></script>
+  <script src="js/app.js?v=7"></script>
 </body>
 </html>

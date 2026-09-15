@@ -5,22 +5,17 @@ const topbar = document.getElementById("topbar");
 const preloader = document.getElementById("preloader");
 const fsBtn = document.getElementById("fsBtn");
 const shareBtn = document.getElementById("shareBtn");
-const helpBtn = document.getElementById("helpBtn");
 const menuBtn = document.getElementById("menuBtn");
 const menu = document.getElementById("menu");
 const counter = document.getElementById("counter");
 const toast = document.getElementById("toast");
 const tip = document.getElementById("tip");
-const help = document.getElementById("help");
-const notes = document.getElementById("notes");
-const notesText = document.getElementById("notesText");
 const drawer = document.getElementById("drawer");
 const backdrop = document.getElementById("backdrop");
 const quizCard = document.getElementById("quizCard");
 const quizResult = document.getElementById("quizResult");
 
 let current = 0;
-let notesOn = false;
 let toastTimer = 0;
 
 if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -48,7 +43,6 @@ function pad(n) {
 function overlayOpen() {
   return Boolean(
     (menu && !menu.hidden) ||
-    (help && !help.hidden) ||
     (drawer && !drawer.hidden)
   );
 }
@@ -65,8 +59,7 @@ function setActive(index, writeHash) {
   const ratio = slides.length > 1 ? index / (slides.length - 1) : 0;
   progressBar.style.width = `${ratio * 100}%`;
   topbar.classList.toggle("is-blend", dark);
-  counter.textContent = `${pad(index + 1)} / ${pad(slides.length)}`;
-  notesText.textContent = slides[index].dataset.note || "";
+  if (counter) counter.textContent = `${pad(index + 1)} / ${pad(slides.length)}`;
   dotButtons.forEach((btn, i) => {
     btn.classList.toggle("is-active", i === index);
     btn.classList.toggle("is-light", dark);
@@ -129,12 +122,11 @@ async function copyLink(url) {
 }
 
 function closeOverlays() {
-  menu.hidden = true;
-  menuBtn.setAttribute("aria-expanded", "false");
-  help.hidden = true;
-  drawer.hidden = true;
-  backdrop.hidden = true;
-  tip.hidden = true;
+  if (menu) menu.hidden = true;
+  menuBtn?.setAttribute("aria-expanded", "false");
+  if (drawer) drawer.hidden = true;
+  if (backdrop) backdrop.hidden = true;
+  if (tip) tip.hidden = true;
 }
 
 function openMenu() {
@@ -146,15 +138,9 @@ function openMenu() {
   }
 }
 
-fsBtn.addEventListener("click", toggleFullscreen);
-shareBtn.addEventListener("click", () => copyLink());
-helpBtn.addEventListener("click", () => {
-  help.hidden = !help.hidden;
-});
-document.getElementById("helpClose").addEventListener("click", () => {
-  help.hidden = true;
-});
-menuBtn.addEventListener("click", openMenu);
+fsBtn?.addEventListener("click", toggleFullscreen);
+shareBtn?.addEventListener("click", () => copyLink());
+menuBtn?.addEventListener("click", openMenu);
 
 document.querySelectorAll(".js-nav").forEach((link) => {
   link.addEventListener("click", (event) => {
@@ -176,19 +162,7 @@ window.addEventListener("keydown", (event) => {
     return;
   }
 
-  if (overlayOpen() && event.key !== "?" && event.key !== "/") return;
-
-  if (event.key === "?" || (event.key === "/" && event.shiftKey)) {
-    event.preventDefault();
-    help.hidden = !help.hidden;
-    return;
-  }
-
-  if ((event.key === "n" || event.key === "N") && !event.ctrlKey && !event.metaKey) {
-    notesOn = !notesOn;
-    notes.hidden = !notesOn;
-    return;
-  }
+  if (overlayOpen()) return;
 
   if (event.key === "f" || event.key === "F") {
     event.preventDefault();
