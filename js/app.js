@@ -32,7 +32,7 @@ if (dots) {
   });
 }
 
-const dotButtons = [...dots.querySelectorAll("button")];
+const dotButtons = dots ? [...dots.querySelectorAll("button")] : [];
 
 function isDarkSlide(index) {
   return ["hero", "quote", "day", "pay", "finale"].includes(slides[index]?.id);
@@ -56,18 +56,20 @@ function go(index) {
 }
 
 function setActive(index, writeHash) {
+  if (!slides[index]) return;
   current = index;
   const dark = isDarkSlide(index);
   const ratio = slides.length > 1 ? index / (slides.length - 1) : 0;
   if (progressBar) progressBar.style.width = `${ratio * 100}%`;
-  topbar.classList.toggle("is-blend", dark);
+  topbar?.classList.toggle("is-blend", dark);
   if (counter) counter.textContent = `${pad(index + 1)} / ${pad(slides.length)}`;
   dotButtons.forEach((btn, i) => {
     btn.classList.toggle("is-active", i === index);
     btn.classList.toggle("is-light", dark);
   });
   document.querySelectorAll(".topbar__nav a, .menu__nav a").forEach((link) => {
-    const id = link.getAttribute("href")?.slice(1);
+    const href = link.getAttribute("href") || "";
+    const id = href.startsWith("#") ? href.slice(1) : "";
     link.classList.toggle("is-current", id === slides[index].id);
   });
   if (writeHash) {
@@ -135,11 +137,12 @@ function closeOverlays() {
 }
 
 function openMenu() {
+  if (!menu) return;
   const open = menu.hidden;
   closeOverlays();
   if (open) {
     menu.hidden = false;
-    menuBtn.setAttribute("aria-expanded", "true");
+    menuBtn?.setAttribute("aria-expanded", "true");
   }
 }
 
@@ -339,6 +342,7 @@ let score = 0;
 
 
 function renderQuestion() {
+  if (!quizQ || !quizStep || !quizBar) return;
   quizQ.textContent = questions[qIndex];
   quizStep.textContent = `Вопрос ${qIndex + 1} из ${questions.length}`;
   quizBar.style.width = `${(qIndex / questions.length) * 100}%`;
@@ -363,7 +367,7 @@ function finishQuiz() {
 }
 
 function answerQuiz(value) {
-  if (quizCard.hidden) return;
+  if (!quizCard || quizCard.hidden) return;
   score += Number(value);
   qIndex += 1;
   if (qIndex >= questions.length) finishQuiz();
