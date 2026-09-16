@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=12" />
+  <link rel="stylesheet" href="css/style.css?v=13" />
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -323,13 +323,22 @@
           <p class="path-card__from">Ступень 1 · СПО</p>
           <h3>Колледж</h3>
           <p class="path-card__time">после 9 класса — 3 года 10 мес. · после 11 — 2 года 10 мес.</p>
-          <p>Квалификация — техник-технолог. Практика на производстве уже во время учёбы. Можно выйти на работу раньше сверстников из вуза, а высшее добрать позже.</p>
+          <p>Квалификация — техник-технолог. Практика уже во время учёбы. Высшее можно добрать позже.</p>
+          <div class="edu-links">
+            <a href="https://rosbiotech.ru" target="_blank" rel="noopener">МТК Росбиотех · Москва</a>
+            <a href="https://www.vsuet.ru" target="_blank" rel="noopener">СПО ВГУИТ · Воронеж</a>
+          </div>
         </article>
         <article class="path-card path-card--accent">
           <p class="path-card__from">Ступень 2 · ВО</p>
           <h3>Вуз</h3>
           <p class="path-card__time">бакалавриат — 4 года · магистратура — ещё 2 года</p>
-          <p>Глубже химия, инженерия, разработка продуктов. Бакалавриат — основной путь к должности технолога и главного технолога. Магистратура — наука, R&amp;D, преподавание.</p>
+          <p>Глубже химия и инженерия. Бакалавриат — путь к технологу, магистратура — наука и разработка.</p>
+          <div class="edu-links">
+            <a href="https://rosbiotech.ru" target="_blank" rel="noopener">Росбиотех · Москва</a>
+            <a href="https://www.vsuet.ru" target="_blank" rel="noopener">ВГУИТ · Воронеж</a>
+            <a href="https://www.kubstu.ru" target="_blank" rel="noopener">КубГТУ · Краснодар</a>
+          </div>
         </article>
       </div>
       <p class="path-note">
@@ -444,9 +453,18 @@
           <p class="quiz-result__n" id="quizScore"></p>
           <h3 id="quizTitle"></h3>
           <p id="quizText"></p>
+          <div class="schools">
+            <p class="schools__label">Где этому учат в России</p>
+            <div class="schools__row">
+              <a href="https://rosbiotech.ru" target="_blank" rel="noopener">Росбиотех<span>Москва · вуз и колледж</span></a>
+              <a href="https://www.vsuet.ru" target="_blank" rel="noopener">ВГУИТ<span>Воронеж · вуз и СПО</span></a>
+              <a href="https://www.kubstu.ru" target="_blank" rel="noopener">КубГТУ<span>Краснодар · вуз</span></a>
+              <a href="https://mgutm.ru" target="_blank" rel="noopener">МГУТУ<span>Москва · вуз</span></a>
+            </div>
+            <a class="schools__all" href="napravleniya/">Все направления и коды специальностей →</a>
+          </div>
           <div class="quiz-result__actions">
             <button type="button" class="btn-reset" id="quizReset">Пройти ещё раз</button>
-            <button type="button" class="btn-line" id="quizShare">Поделиться результатом</button>
           </div>
         </div>
       </div>
@@ -482,7 +500,7 @@
   <div class="tip" id="tip" hidden></div>
   <div class="toast" id="toast" hidden></div>
 
-  <script src="js/app.js?v=12"></script>
+  <script src="js/app.js?v=13"></script>
   <script>
     (function () {
       function hideBoot() {

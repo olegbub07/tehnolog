@@ -336,7 +336,7 @@ const quizText = document.getElementById("quizText");
 
 let qIndex = 0;
 let score = 0;
-let lastResult = "";
+
 
 function renderQuestion() {
   quizQ.textContent = questions[qIndex];
@@ -360,7 +360,6 @@ function finishQuiz() {
     quizTitle.textContent = "Не твоё — и это нормально.";
     quizText.textContent = "Теперь ты хотя бы знаешь, кто стоит за хлебом и йогуртом. Иногда этого достаточно, чтобы выбрать другую дорогу осознанно.";
   }
-  lastResult = `${quizTitle.textContent} (${score}/${questions.length})`;
 }
 
 function answerQuiz(value) {
@@ -381,10 +380,6 @@ document.getElementById("quizReset")?.addEventListener("click", () => {
   quizResult.hidden = true;
   quizCard.hidden = false;
   renderQuestion();
-});
-
-document.getElementById("quizShare")?.addEventListener("click", () => {
-  copyLink(`${location.origin}${location.pathname}#quiz — ${lastResult}`);
 });
 
 document.getElementById("copyLinkBtn")?.addEventListener("click", () => copyLink(location.href.split("#")[0]));
