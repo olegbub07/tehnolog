@@ -5,11 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <script>
     (function () {
-      if (/\/tehnolog(\/|$)/.test(location.pathname)) {
-        var base = document.createElement("base");
+      var path = location.pathname.replace(/\\/g, "/");
+      var base = document.createElement("base");
+      if (/\/tehnolog(\/|$)/.test(path)) {
         base.href = "/tehnolog/";
-        document.head.appendChild(base);
+      } else if (path.indexOf("/napravleniya") !== -1) {
+        base.href = "../";
+      } else {
+        return;
       }
+      document.head.appendChild(base);
     })();
   </script>
   <style>
@@ -28,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=11" />
+  <link rel="stylesheet" href="css/style.css?v=12" />
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -52,6 +57,7 @@
       <a class="js-nav" href="#work">Работа</a>
       <a class="js-nav" href="#path">Учёба</a>
       <a class="js-nav" href="#pay">Карьера</a>
+      <a href="napravleniya/">Поступить</a>
       <a class="js-nav" href="#quiz">Тест</a>
     </nav>
     <div class="topbar__actions">
@@ -72,6 +78,7 @@
       <a class="js-nav" href="#where">Где работает</a>
       <a class="js-nav" href="#path">Учёба</a>
       <a class="js-nav" href="#pay">Карьера</a>
+      <a href="napravleniya/">Куда поступить</a>
       <a class="js-nav" href="#faq">Вопросы</a>
       <a class="js-nav" href="#quiz">Тест</a>
     </nav>
@@ -214,10 +221,17 @@
         <p class="lede">Пищевая промышленность — одна из самых стабильных. Люди едят каждый день, в любом городе. Нажмите на фото, чтобы открыть отрасль.</p>
       </div>
       <div class="mosaic">
-        <figure class="mosaic__item mosaic__item--lg" data-industry="bread" tabindex="0" role="button">
+        <figure class="mosaic__item" data-industry="bread" tabindex="0" role="button">
           <img src="images/bread.jpg" alt="Свежий хлеб" loading="lazy" />
           <figcaption>
             <strong>Хлеб и мука</strong>
+            <span>Нажмите, чтобы открыть</span>
+          </figcaption>
+        </figure>
+        <figure class="mosaic__item" data-industry="wine" tabindex="0" role="button">
+          <img src="images/wine.jpg" alt="Виноделие" loading="lazy" />
+          <figcaption>
+            <strong>Виноделие</strong>
             <span>Нажмите, чтобы открыть</span>
           </figcaption>
         </figure>
@@ -235,7 +249,14 @@
             <span>Нажмите, чтобы открыть</span>
           </figcaption>
         </figure>
-        <figure class="mosaic__item mosaic__item--wide" data-industry="plant" tabindex="0" role="button">
+        <figure class="mosaic__item" data-industry="feed" tabindex="0" role="button">
+          <img src="images/feed.jpg" alt="Комбикорма" loading="lazy" />
+          <figcaption>
+            <strong>Комбикорма</strong>
+            <span>Нажмите, чтобы открыть</span>
+          </figcaption>
+        </figure>
+        <figure class="mosaic__item" data-industry="plant" tabindex="0" role="button">
           <img src="images/production.jpg" alt="Пищевое производство" loading="lazy" />
           <figcaption>
             <strong>Заводы и комбинаты</strong>
@@ -277,30 +298,43 @@
       </div>
     </section>
 
-    <section class="slide path" id="path" data-title="Учёба" data-note="После 9 класса — колледж. После 11 — колледж или вуз. Не запугивайте вузом: колледж уже профессия.">
+    <section class="slide path" id="path" data-title="Учёба" data-note="После 9 класса — колледж. После 11 — колледж или вуз. Ступени: колледж, бакалавриат, магистратура.">
       <p class="kicker kicker--dark">06 · Маршрут</p>
       <h2>Как стать технологом</h2>
-      <div class="path-grid">
+      <ol class="stages">
+        <li>
+          <span>01</span>
+          <strong>Колледж</strong>
+          <em>среднее профессиональное</em>
+        </li>
+        <li>
+          <span>02</span>
+          <strong>Вуз</strong>
+          <em>бакалавриат</em>
+        </li>
+        <li>
+          <span>03</span>
+          <strong>Магистратура</strong>
+          <em>по желанию</em>
+        </li>
+      </ol>
+      <div class="path-grid path-grid--two">
         <article class="path-card">
-          <p class="path-card__from">После 9 класса</p>
+          <p class="path-card__from">Ступень 1 · СПО</p>
           <h3>Колледж</h3>
-          <p class="path-card__time">3 года 10 месяцев</p>
-          <p>Специальность «Технология продуктов питания». Квалификация — техник-технолог. Можно выйти на работу раньше сверстников из вуза.</p>
+          <p class="path-card__time">после 9 класса — 3 года 10 мес. · после 11 — 2 года 10 мес.</p>
+          <p>Квалификация — техник-технолог. Практика на производстве уже во время учёбы. Можно выйти на работу раньше сверстников из вуза, а высшее добрать позже.</p>
         </article>
         <article class="path-card path-card--accent">
-          <p class="path-card__from">После 11 класса</p>
-          <h3>Колледж или вуз</h3>
-          <p class="path-card__time">2 года 10 мес. · или 4 года</p>
-          <p>Колледж — быстрее к практике. Вуз (19.03.02, 19.03.03) — глубже химия, инженерия, путь к главному технологу и науке.</p>
-        </article>
-        <article class="path-card">
-          <p class="path-card__from">Дальше</p>
-          <h3>Производство</h3>
-          <p class="path-card__time">с первого года</p>
-          <p>Младший технолог → технолог смены → старший → главный. Можно уйти в разработку новых продуктов — <button class="term term--on-light" type="button" data-tip="R&amp;D — отдел разработки: придумывают новые продукты, которые потом встанут на линию.">R&amp;D</button>.</p>
+          <p class="path-card__from">Ступень 2 · ВО</p>
+          <h3>Вуз</h3>
+          <p class="path-card__time">бакалавриат — 4 года · магистратура — ещё 2 года</p>
+          <p>Глубже химия, инженерия, разработка продуктов. Бакалавриат — основной путь к должности технолога и главного технолога. Магистратура — наука, R&amp;D, преподавание.</p>
         </article>
       </div>
-      <p class="path-note">На крупных заводах часто ждут высшее образование. Колледж — сильный старт, вуз — потолок выше.</p>
+      <p class="path-note">
+        <a href="napravleniya/">Смотреть направления, куда можно поступить →</a>
+      </p>
     </section>
 
     <section class="slide pay" id="pay" data-title="Карьера" data-note="Цифры ориентировочные по России, 2026. В регионах меньше, в Москве и на брендах — больше.">
@@ -354,6 +388,10 @@
           <h3>Наука плюс руки</h3>
           <p>Для тех, кому мало одной теории и мало одной кухни. Здесь есть и формула, и вкус.</p>
         </article>
+        <article class="why-grid__feature">
+          <h3>Культ правильного питания</h3>
+          <p>Сегодня еда — не только вкус, но и здоровье. Технолог делает продукты без лишнего сахара, с понятным составом, для детей, спорта, безлактозные и функциональные. Ты влияешь на то, как люди едят каждый день.</p>
+        </article>
       </div>
     </section>
 
@@ -375,7 +413,7 @@
         </details>
         <details>
           <summary>Где потом работать?</summary>
-          <p>Хлебозаводы, молочные комбинаты, кондитерские фабрики, мясопереработка, напитки, общепит, лаборатории качества и отделы новых продуктов.</p>
+          <p>Хлебозаводы, молочные комбинаты, кондитерские фабрики, виноделие, комбикормовые заводы, мясопереработка, напитки, общепит, лаборатории качества и отделы новых продуктов.</p>
         </details>
         <details>
           <summary>Это только для девочек или только для мальчиков?</summary>
@@ -424,8 +462,8 @@
         <h2>Еда не появляется<br />сама по себе.</h2>
         <p>Её придумывают люди, которым интересны и формула, и вкус. Если после этой встречи остался вопрос — задай его. Технолог пищевых производств всегда где-то рядом: в хлебе, в молоке, в шоколаде.</p>
         <div class="finale__actions">
-          <button type="button" class="btn-solid" id="copyLinkBtn">Скопировать ссылку на сайт</button>
-          <a class="btn-line js-nav" href="#quiz">К тесту</a>
+          <a class="btn-solid" href="napravleniya/">Куда можно поступить</a>
+          <button type="button" class="btn-line" id="copyLinkBtn">Скопировать ссылку</button>
         </div>
         <p class="finale__sign">Профориентация · Технолог пищевых производств</p>
       </div>
@@ -444,7 +482,7 @@
   <div class="tip" id="tip" hidden></div>
   <div class="toast" id="toast" hidden></div>
 
-  <script src="js/app.js?v=11"></script>
+  <script src="js/app.js?v=12"></script>
   <script>
     (function () {
       function hideBoot() {

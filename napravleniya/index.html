@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <script>
+    (function () {
+      var path = location.pathname.replace(/\\/g, "/");
+      var base = document.createElement("base");
+      if (/\/tehnolog(\/|$)/.test(path)) {
+        base.href = "/tehnolog/";
+      } else if (path.indexOf("/napravleniya") !== -1) {
+        base.href = "../";
+      } else {
+        return;
+      }
+      document.head.appendChild(base);
+    })();
+  </script>
+  <title>Куда поступить — технолог пищевых производств</title>
+  <meta name="description" content="Колледж и вуз: направления подготовки технолога пищевых производств, виноделия и комбикормов." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231A1410'/%3E%3Cpath d='M32 10c1.2 8 4 14 10 18-6 2-10 8-10 18-1.2-8-4-14-10-18 6-2 10-8 10-18z' fill='%23C9A227'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=12" />
+</head>
+<body class="page">
+  <header class="topbar is-on">
+    <a class="brand" href="index.html">
+      <span class="brand__mark" aria-hidden="true"></span>
+      <span class="brand__name">Пищевые технологии</span>
+    </a>
+    <nav class="topbar__nav" aria-label="Навигация">
+      <a href="index.html">На главную</a>
+      <a href="index.html#path">Учёба</a>
+      <a href="index.html#quiz">Тест</a>
+    </nav>
+  </header>
+
+  <main class="catalog">
+    <p class="kicker kicker--dark">Поступление</p>
+    <h1>Куда можно<br />поступить</h1>
+    <p class="catalog__lead">Отдельный список направлений. Смотри код специальности в приёмной комиссии колледжа или вуза своего региона — названия программ могут чуть отличаться.</p>
+
+    <section class="dir-block">
+      <p class="kicker kicker--dark">Колледж · после 9 или 11 класса</p>
+      <h2>Среднее профессиональное</h2>
+      <ul class="dir-list">
+        <li>
+          <code>19.02.11</code>
+          <div>
+            <strong>Технология продуктов питания из растительного сырья</strong>
+            <span>Хлеб, мука, крупы, масло, соки, консервы из овощей и фруктов.</span>
+          </div>
+        </li>
+        <li>
+          <code>19.02.12</code>
+          <div>
+            <strong>Технология продуктов питания животного происхождения</strong>
+            <span>Молоко, сыр, мясо, птица, рыба — контроль сырья и готового продукта.</span>
+          </div>
+        </li>
+        <li>
+          <code>19.02.13</code>
+          <div>
+            <strong>Технология продуктов общественного питания</strong>
+            <span>Цех, комбинат питания, сеть: рецептуры, качество, санитарные нормы.</span>
+          </div>
+        </li>
+        <li>
+          <code>19.02.05</code>
+          <div>
+            <strong>Технология бродильных производств и виноделие</strong>
+            <span>Вино, пиво, квас, дрожжи. Брожение, купаж, выдержка.</span>
+          </div>
+        </li>
+        <li>
+          <code>19.02.02</code>
+          <div>
+            <strong>Технология хранения и переработки зерна</strong>
+            <span>Элеватор, мельница, комбикормовый завод. Зерно и корма.</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="dir-block">
+      <p class="kicker kicker--dark">Вуз · после 11 класса</p>
+      <h2>Бакалавриат</h2>
+      <ul class="dir-list">
+        <li>
+          <code>19.03.02</code>
+          <div>
+            <strong>Продукты питания из растительного сырья</strong>
+            <span>Хлеб, кондитерка, виноделие, напитки. ЕГЭ: русский, математика, химия / биология / физика.</span>
+          </div>
+        </li>
+        <li>
+          <code>19.03.03</code>
+          <div>
+            <strong>Продукты питания животного происхождения</strong>
+            <span>Молоко, мясо, рыба. Путь к технологу на комбинате и в лаборатории.</span>
+          </div>
+        </li>
+        <li>
+          <code>19.03.04</code>
+          <div>
+            <strong>Технология продукции и организация общественного питания</strong>
+            <span>Производство еды для общепита, качество, правильное питание.</span>
+          </div>
+        </li>
+        <li>
+          <code>35.03.07</code>
+          <div>
+            <strong>Технология производства и переработки сельскохозяйственной продукции</strong>
+            <span>От поля до продукта, в том числе корма и переработка зерна.</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="dir-block">
+      <p class="kicker kicker--dark">Дальше · по желанию</p>
+      <h2>Магистратура</h2>
+      <ul class="dir-list">
+        <li>
+          <code>19.04.02</code>
+          <div>
+            <strong>Продукты питания из растительного сырья</strong>
+            <span>Наука, разработка новых продуктов, R&amp;D, преподавание. Ещё 2 года после бакалавриата.</span>
+          </div>
+        </li>
+        <li>
+          <code>19.04.03</code>
+          <div>
+            <strong>Продукты питания животного происхождения</strong>
+            <span>Углублённая технология молока, мяса, рыбы. Главный технолог, лаборатория, вуз.</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <p class="catalog__foot">Коды — федеральные. Точный список программ и вступительные испытания смотри на сайте колледжа или вуза. Каталоги: postupi.online, vuzopedia.ru.</p>
+    <p class="path-note"><a href="index.html">← Вернуться к презентации</a></p>
+  </main>
+</body>
+</html>
