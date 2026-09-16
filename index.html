@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=13" />
+  <link rel="stylesheet" href="css/style.css?v=14" />
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -323,7 +323,14 @@
           <p class="path-card__from">Ступень 1 · СПО</p>
           <h3>Колледж</h3>
           <p class="path-card__time">после 9 класса — 3 года 10 мес. · после 11 — 2 года 10 мес.</p>
-          <p>Квалификация — техник-технолог. Практика уже во время учёбы. Высшее можно добрать позже.</p>
+          <p class="exam-label">ОГЭ</p>
+          <ul class="exam-pills">
+            <li>Русский</li>
+            <li>Математика</li>
+            <li>Химия или биология</li>
+          </ul>
+          <p class="exam-note">Берут по аттестату. ОГЭ нужен, чтобы его получить: русский и математика обязательно, третий предмет лучше химия или биология.</p>
+          <p class="exam-label">Где учат</p>
           <div class="edu-links">
             <a href="https://rosbiotech.ru" target="_blank" rel="noopener">МТК Росбиотех · Москва</a>
             <a href="https://www.vsuet.ru" target="_blank" rel="noopener">СПО ВГУИТ · Воронеж</a>
@@ -333,11 +340,19 @@
           <p class="path-card__from">Ступень 2 · ВО</p>
           <h3>Вуз</h3>
           <p class="path-card__time">бакалавриат — 4 года · магистратура — ещё 2 года</p>
-          <p>Глубже химия и инженерия. Бакалавриат — путь к технологу, магистратура — наука и разработка.</p>
+          <p class="exam-label">ЕГЭ</p>
+          <ul class="exam-pills">
+            <li>Русский</li>
+            <li>Математика профиль</li>
+            <li>Химия или биология</li>
+          </ul>
+          <p class="exam-note">Чаще всего: русский, профильная математика и химия или биология. Иногда вместо них физика — смотри сайт вуза.</p>
+          <p class="exam-label">Где учат</p>
           <div class="edu-links">
             <a href="https://rosbiotech.ru" target="_blank" rel="noopener">Росбиотех · Москва</a>
             <a href="https://www.vsuet.ru" target="_blank" rel="noopener">ВГУИТ · Воронеж</a>
             <a href="https://www.kubstu.ru" target="_blank" rel="noopener">КубГТУ · Краснодар</a>
+            <a href="https://mgutm.ru" target="_blank" rel="noopener">МГУТУ · Москва</a>
           </div>
         </article>
       </div>
@@ -500,7 +515,7 @@
   <div class="tip" id="tip" hidden></div>
   <div class="toast" id="toast" hidden></div>
 
-  <script src="js/app.js?v=13"></script>
+  <script src="js/app.js?v=14"></script>
   <script>
     (function () {
       function hideBoot() {

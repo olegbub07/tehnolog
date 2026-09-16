@@ -860,11 +860,52 @@ h2 em {
   border-bottom: 1px solid currentColor;
 }
 
+.exam-label {
+  margin-top: 16px;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.path-card--accent .exam-label {
+  color: var(--honey);
+}
+
+.exam-pills {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0 10px;
+}
+
+.exam-pills li {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(194, 74, 40, 0.1);
+  color: var(--terracotta-deep);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.path-card--accent .exam-pills li {
+  background: rgba(201, 162, 39, 0.16);
+  color: var(--honey);
+}
+
+.exam-note {
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: 0.82;
+}
+
 .edu-links {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 18px;
+  margin-top: 10px;
 }
 
 .edu-links a {
@@ -1300,6 +1341,14 @@ h2 em {
 
   .stages strong {
     font-size: 20px;
+  }
+
+  .exam-note {
+    font-size: 13px;
+  }
+
+  .path-card {
+    padding: 18px 20px 20px;
   }
 
   .quiz-q {
