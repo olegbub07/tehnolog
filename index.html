@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=15" />
+  <link rel="stylesheet" href="css/style.css?v=16" />
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -53,6 +53,7 @@
       <span class="brand__name">Пищевые технологии</span>
     </a>
     <nav class="topbar__nav" aria-label="Разделы">
+      <a class="js-nav" href="#facts">Факты</a>
       <a class="js-nav" href="#who">Кто это</a>
       <a class="js-nav" href="#work">Работа</a>
       <a class="js-nav" href="#path">Учёба</a>
@@ -73,6 +74,7 @@
   <div class="menu" id="menu" hidden>
     <nav class="menu__nav" aria-label="Мобильное меню">
       <a class="js-nav" href="#hero">Старт</a>
+      <a class="js-nav" href="#facts">Факты</a>
       <a class="js-nav" href="#who">Кто это</a>
       <a class="js-nav" href="#work">Чем занят</a>
       <a class="js-nav" href="#where">Где работает</a>
@@ -120,6 +122,28 @@
       </blockquote>
     </section>
 
+    <section class="slide facts" id="facts" data-title="Факты">
+      <p class="kicker kicker--dark">Секунда внимания</p>
+      <h2>Три факта, после которых<br />профессия звучит иначе</h2>
+      <div class="fact-grid">
+        <article>
+          <img src="images/cheese.jpg" alt="Сыр" loading="lazy" />
+          <strong>Сыр — это управляемые бактерии</strong>
+          <p>Технолог решает, какие культуры запустить, сколько часов держать и каким будет вкус. Не «просто сквасили молоко».</p>
+        </article>
+        <article>
+          <img src="images/cocoa.jpg" alt="Шоколад" loading="lazy" />
+          <strong>Белый налёт на шоколаде — не плесень</strong>
+          <p>Это жир, который всплыл при неправильной температуре. Технолог знает, как этого не допустить на целой партии.</p>
+        </article>
+        <article>
+          <img src="images/lab-bench.jpg" alt="Пищевая лаборатория" loading="lazy" />
+          <strong>Один рецепт кормит город</strong>
+          <p>Ошибка в граммах на заводе — это тысячи упаковок. Поэтому здесь любят химию и не любят «на глаз».</p>
+        </article>
+      </div>
+    </section>
+
     <section class="slide who" id="who" data-title="Кто это" data-note="Подчеркните: это не повар и не продавец. Инженер + химик + дегустатор.">
       <div class="who__grid">
         <div class="who__copy">
@@ -129,8 +153,8 @@
           <p class="body">Если хлеб осел, йогурт получился слишком кислым, а партия шоколада побелела — разбирается он. Это работа на стыке химии, биологии и ремесла. Результат можно попробовать.</p>
         </div>
         <figure class="who__photo">
-          <img src="images/tasting.jpg" alt="Работа технолога с образцом в лаборатории" loading="lazy" />
-          <figcaption>Лаборатория · контроль образца</figcaption>
+          <img src="images/specialist.jpg" alt="Технолог в лаборатории с образцами" loading="lazy" />
+          <figcaption>Дегустация · работа с образцом</figcaption>
         </figure>
       </div>
     </section>
@@ -354,8 +378,38 @@
             <a href="https://donstu.ru" target="_blank" rel="noopener">ДГТУ · Ростов-на-Дону</a>
             <a href="https://www.kubstu.ru" target="_blank" rel="noopener">КубГТУ · Краснодар</a>
             <a href="https://mgutm.ru" target="_blank" rel="noopener">МГУТУ · Москва</a>
+            <a href="https://www.timacad.ru" target="_blank" rel="noopener">Тимирязевка · Москва</a>
+            <a href="https://kemsu.ru" target="_blank" rel="noopener">КемГУ · Кемерово</a>
           </div>
         </article>
+      </div>
+      <div class="uni-ticker" aria-label="Вузы России">
+        <div class="uni-ticker__track">
+          <a href="https://rosbiotech.ru" target="_blank" rel="noopener">Росбиотех</a>
+          <a href="https://www.vsuet.ru" target="_blank" rel="noopener">ВГУИТ</a>
+          <a href="https://donstu.ru" target="_blank" rel="noopener">ДГТУ</a>
+          <a href="https://www.kubstu.ru" target="_blank" rel="noopener">КубГТУ</a>
+          <a href="https://mgutm.ru" target="_blank" rel="noopener">МГУТУ</a>
+          <a href="https://www.timacad.ru" target="_blank" rel="noopener">Тимирязевка</a>
+          <a href="https://kemsu.ru" target="_blank" rel="noopener">КемГУ</a>
+          <a href="https://www.kstu.ru" target="_blank" rel="noopener">КНИТУ</a>
+          <a href="https://www.altstu.ru" target="_blank" rel="noopener">АлтГТУ</a>
+          <a href="https://klgtu.ru" target="_blank" rel="noopener">КГТУ Калининград</a>
+          <a href="https://www.sgau.ru" target="_blank" rel="noopener">СГАУ Вавилова</a>
+          <a href="https://www.kgau.ru" target="_blank" rel="noopener">КрасГАУ</a>
+          <a href="https://rosbiotech.ru" target="_blank" rel="noopener">Росбиотех</a>
+          <a href="https://www.vsuet.ru" target="_blank" rel="noopener">ВГУИТ</a>
+          <a href="https://donstu.ru" target="_blank" rel="noopener">ДГТУ</a>
+          <a href="https://www.kubstu.ru" target="_blank" rel="noopener">КубГТУ</a>
+          <a href="https://mgutm.ru" target="_blank" rel="noopener">МГУТУ</a>
+          <a href="https://www.timacad.ru" target="_blank" rel="noopener">Тимирязевка</a>
+          <a href="https://kemsu.ru" target="_blank" rel="noopener">КемГУ</a>
+          <a href="https://www.kstu.ru" target="_blank" rel="noopener">КНИТУ</a>
+          <a href="https://www.altstu.ru" target="_blank" rel="noopener">АлтГТУ</a>
+          <a href="https://klgtu.ru" target="_blank" rel="noopener">КГТУ Калининград</a>
+          <a href="https://www.sgau.ru" target="_blank" rel="noopener">СГАУ Вавилова</a>
+          <a href="https://www.kgau.ru" target="_blank" rel="noopener">КрасГАУ</a>
+        </div>
       </div>
       <p class="path-note">
         <a href="napravleniya/">Смотреть направления, куда можно поступить →</a>
@@ -477,6 +531,8 @@
               <a href="https://donstu.ru" target="_blank" rel="noopener">ДГТУ<span>Ростов-на-Дону · вуз</span></a>
               <a href="https://www.kubstu.ru" target="_blank" rel="noopener">КубГТУ<span>Краснодар · вуз</span></a>
               <a href="https://mgutm.ru" target="_blank" rel="noopener">МГУТУ<span>Москва · вуз</span></a>
+              <a href="https://www.timacad.ru" target="_blank" rel="noopener">Тимирязевка<span>Москва · вуз</span></a>
+              <a href="https://kemsu.ru" target="_blank" rel="noopener">КемГУ<span>Кемерово · вуз</span></a>
             </div>
             <a class="schools__all" href="napravleniya/">Все направления и коды специальностей →</a>
           </div>
@@ -517,7 +573,7 @@
   <div class="tip" id="tip" hidden></div>
   <div class="toast" id="toast" hidden></div>
 
-  <script src="js/app.js?v=15"></script>
+  <script src="js/app.js?v=16"></script>
   <script>
     (function () {
       function hideBoot() {
