@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=16" />
+  <link rel="stylesheet" href="css/style.css?v=17" />
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -88,7 +88,7 @@
 
   <div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
   <nav class="dots" id="dots" aria-label="Слайды презентации"></nav>
-  <div class="counter" id="counter" aria-live="polite">01 / 13</div>
+  <div class="counter" id="counter" aria-live="polite">01 / 14</div>
 
   <main>
     <section class="slide hero" id="hero" data-title="Старт" data-note="Представьтесь. Спросите класс: кто придумал йогурт на полке магазина?">
@@ -126,20 +126,38 @@
       <p class="kicker kicker--dark">Секунда внимания</p>
       <h2>Три факта, после которых<br />профессия звучит иначе</h2>
       <div class="fact-grid">
-        <article>
+        <article class="fact-card">
           <img src="images/cheese.jpg" alt="Сыр" loading="lazy" />
           <strong>Сыр — это управляемые бактерии</strong>
           <p>Технолог решает, какие культуры запустить, сколько часов держать и каким будет вкус. Не «просто сквасили молоко».</p>
+          <button type="button" class="fact-toggle" aria-expanded="false">Как это делает технолог</button>
+          <ol class="fact-steps">
+            <li>Проверяет молоко: жир, белок, микробы</li>
+            <li>Вносит закваску и держит точную температуру</li>
+            <li>Следит за кислотностью, солит, даёт созреть</li>
+          </ol>
         </article>
-        <article>
+        <article class="fact-card">
           <img src="images/cocoa.jpg" alt="Шоколад" loading="lazy" />
           <strong>Белый налёт на шоколаде — не плесень</strong>
           <p>Это жир, который всплыл при неправильной температуре. Технолог знает, как этого не допустить на целой партии.</p>
+          <button type="button" class="fact-toggle" aria-expanded="false">Как это делает технолог</button>
+          <ol class="fact-steps">
+            <li>Плавит какао-массу и выравнивает температуру</li>
+            <li>Темперирует: жир должен застыть «правильно»</li>
+            <li>Отливает и охлаждает, иначе появится налёт</li>
+          </ol>
         </article>
-        <article>
+        <article class="fact-card">
           <img src="images/lab-bench.jpg" alt="Пищевая лаборатория" loading="lazy" />
           <strong>Один рецепт кормит город</strong>
           <p>Ошибка в граммах на заводе — это тысячи упаковок. Поэтому здесь любят химию и не любят «на глаз».</p>
+          <button type="button" class="fact-toggle" aria-expanded="false">Как это делает технолог</button>
+          <ol class="fact-steps">
+            <li>Считает рецептуру на тонны, не на кастрюлю</li>
+            <li>Запускает пробную партию и пробует</li>
+            <li>Только потом отдаёт линию в серию</li>
+          </ol>
         </article>
       </div>
     </section>
@@ -566,6 +584,8 @@
     <p class="kicker kicker--dark" id="drawerKicker">Отрасль</p>
     <h3 id="drawerTitle"></h3>
     <p id="drawerText"></p>
+    <p class="exam-label" id="drawerStepsLabel" hidden>Ход процесса</p>
+    <ol id="drawerSteps" class="drawer-steps"></ol>
     <ul id="drawerList"></ul>
   </aside>
   <div class="backdrop" id="backdrop" hidden></div>
@@ -573,7 +593,7 @@
   <div class="tip" id="tip" hidden></div>
   <div class="toast" id="toast" hidden></div>
 
-  <script src="js/app.js?v=16"></script>
+  <script src="js/app.js?v=17"></script>
   <script>
     (function () {
       function hideBoot() {

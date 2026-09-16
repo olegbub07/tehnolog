@@ -147,7 +147,7 @@ function openMenu() {
 }
 
 fsBtn?.addEventListener("click", toggleFullscreen);
-shareBtn?.addEventListener("click", () => copyLink());
+shareBtn?.addEventListener("click", () => copyLink(location.href.split("#")[0]));
 menuBtn?.addEventListener("click", openMenu);
 
 document.querySelectorAll(".js-nav").forEach((link) => {
@@ -178,7 +178,7 @@ window.addEventListener("keydown", (event) => {
     return;
   }
 
-  const onQuiz = slides[current]?.id === "quiz" && !quizCard.hidden;
+  const onQuiz = slides[current]?.id === "quiz" && quizCard && !quizCard.hidden;
   if (onQuiz && (event.key === "1" || event.key === "2")) {
     event.preventDefault();
     answerQuiz(event.key === "1" ? 1 : 0);
@@ -240,55 +240,77 @@ const industries = {
     kicker: "Хлеб и мука",
     title: "Пекарни, хлебозаводы, макароны",
     text: "Технолог следит за закваской, временем расстойки, выпечкой и тем, чтобы батон сегодня был таким же, как вчера. Здесь много живого сырья: мука ведёт себя по-разному в зависимости от урожая.",
-    items: ["Хлебозавод", "Пекарня", "Макаронное производство", "Мукомольный комбинат"]
+    items: ["Хлебозавод", "Пекарня", "Макаронное производство", "Мукомольный комбинат"],
+    steps: ["Проверка муки и воды", "Замес и расстойка теста", "Выпечка по режиму", "Охлаждение и упаковка"]
   },
   dairy: {
     kicker: "Молоко",
     title: "Йогурт, сыр, масло, кефир",
     text: "Молоко живое: кислотность, жир, бактерии. Технолог запускает закваски, пастеризацию, ферментацию и решает, каким будет вкус и срок годности.",
-    items: ["Молочный комбинат", "Сырзавод", "Производство мороженого", "Лаборатория качества"]
+    items: ["Молочный комбинат", "Сырзавод", "Производство мороженого", "Лаборатория качества"],
+    steps: ["Входной контроль молока", "Закваска и ферментация", "Охлаждение, фасовка", "Проверка вкуса и срока"]
   },
   sweet: {
     kicker: "Сладости",
     title: "Шоколад, конфеты, печенье",
     text: "Темперирование шоколада, карамель, начинки. Градус здесь решает всё: чуть выше — шоколад поседеет, чуть ниже — не застынет. Красивая и точная работа.",
-    items: ["Кондитерская фабрика", "Шоколадное производство", "Печенье и вафли"]
+    items: ["Кондитерская фабрика", "Шоколадное производство", "Печенье и вафли"],
+    steps: ["Плавление какао-массы", "Темперирование", "Отливка и охлаждение"]
   },
   wine: {
     kicker: "Виноделие",
     title: "Вино, пиво, квас, напитки брожения",
     text: "Технолог ведёт брожение, купаж, выдержку. Следит за сахаром, кислотностью, температурой и чистотой. Виноделие — это химия вкуса: от винограда до бутылки ничего не происходит само.",
-    items: ["Винодельня", "Пивоварня", "Ликёро-водочный завод", "Безалкогольные напитки"]
+    items: ["Винодельня", "Пивоварня", "Ликёро-водочный завод", "Безалкогольные напитки"],
+    steps: ["Отбор винограда или сусла", "Брожение при заданной температуре", "Купаж и выдержка", "Розлив"]
   },
   feed: {
     kicker: "Комбикорма",
     title: "Корма для животных и птицы",
     text: "Комбикорм — тоже пищевая технология: зерно, белок, витамины, точная рецептура. Технолог считает рацион, запускает линию гранулирования и отвечает за безопасность. Без него нет ни молока, ни мяса, ни яиц.",
-    items: ["Комбикормовый завод", "Элеватор", "Зернопереработка", "Агрохолдинг"]
+    items: ["Комбикормовый завод", "Элеватор", "Зернопереработка", "Агрохолдинг"],
+    steps: ["Рецептура: зерно, белок, витамины", "Измельчение и смешивание", "Гранулирование", "Контроль безопасности"]
   },
   plant: {
     kicker: "Комбинаты",
     title: "Мясо, рыба, напитки, общепит",
     text: "Крупные линии, цеха, смены. Технолог может работать на мясокомбинате, в консервах или в цехе, который готовит еду для сетей. Есть путь в лабораторию и в разработку новинок.",
-    items: ["Мясокомбинат", "Рыбопереработка", "Консервы", "Общепит и R&D"]
+    items: ["Мясокомбинат", "Рыбопереработка", "Консервы", "Общепит и R&D"],
+    steps: ["Приёмка и проверка сырья", "Разделка и обработка", "Термообработка по режиму", "Упаковка и маркировка"]
   }
 };
 
 function openDrawer(id) {
   const data = industries[id];
-  if (!data) return;
-  document.getElementById("drawerKicker").textContent = data.kicker;
-  document.getElementById("drawerTitle").textContent = data.title;
-  document.getElementById("drawerText").textContent = data.text;
+  if (!data || !drawer) return;
+  const kicker = document.getElementById("drawerKicker");
+  const title = document.getElementById("drawerTitle");
+  const text = document.getElementById("drawerText");
   const list = document.getElementById("drawerList");
-  list.innerHTML = "";
-  data.items.forEach((item) => {
-    const li = document.createElement("li");
-    li.textContent = item;
-    list.appendChild(li);
-  });
+  const steps = document.getElementById("drawerSteps");
+  const stepsLabel = document.getElementById("drawerStepsLabel");
+  if (kicker) kicker.textContent = data.kicker;
+  if (title) title.textContent = data.title;
+  if (text) text.textContent = data.text;
+  if (list) {
+    list.innerHTML = "";
+    data.items.forEach((item) => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      list.appendChild(li);
+    });
+  }
+  if (steps) {
+    steps.innerHTML = "";
+    (data.steps || []).forEach((item) => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      steps.appendChild(li);
+    });
+  }
+  if (stepsLabel) stepsLabel.hidden = !(data.steps && data.steps.length);
   drawer.hidden = false;
-  backdrop.hidden = false;
+  if (backdrop) backdrop.hidden = false;
 }
 
 document.querySelectorAll("[data-industry]").forEach((el) => {
@@ -317,9 +339,19 @@ document.querySelectorAll(".term").forEach((btn) => {
 });
 
 document.addEventListener("click", (event) => {
+  if (!tip) return;
   if (!event.target.closest(".term") && !event.target.closest("#tip")) {
     tip.hidden = true;
   }
+});
+
+document.querySelectorAll(".fact-toggle").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const card = btn.closest(".fact-card");
+    const open = card.classList.toggle("is-open");
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    btn.textContent = open ? "Свернуть" : "Как это делает технолог";
+  });
 });
 
 const questions = [
@@ -349,10 +381,11 @@ function renderQuestion() {
 }
 
 function finishQuiz() {
+  if (!quizCard || !quizResult) return;
   quizCard.hidden = true;
   quizResult.hidden = false;
-  quizBar.style.width = "100%";
-  quizScore.textContent = `${score} из ${questions.length}`;
+  if (quizBar) quizBar.style.width = "100%";
+  if (quizScore) quizScore.textContent = `${score} из ${questions.length}`;
 
   if (score >= 4) {
     quizTitle.textContent = "Похоже, это твоё.";

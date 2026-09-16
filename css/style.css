@@ -541,9 +541,80 @@ h2 em {
 }
 
 .fact-grid p {
-  padding: 0 18px 20px;
+  padding: 0 18px 12px;
   color: var(--muted);
   font-size: 15px;
+}
+
+.fact-toggle {
+  margin: 0 18px 18px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--terracotta);
+  font: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  border-bottom: 1px solid currentColor;
+}
+
+.fact-steps {
+  display: none;
+  list-style: none;
+  padding: 0 18px 18px;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+.fact-card.is-open .fact-steps {
+  display: grid;
+  gap: 8px;
+}
+
+.fact-steps li {
+  padding-left: 22px;
+  position: relative;
+}
+
+.fact-steps li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.45em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--terracotta);
+}
+
+.drawer-steps {
+  list-style: none;
+  margin: 8px 0 22px;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.drawer-steps li {
+  padding-left: 28px;
+  position: relative;
+  color: var(--ink-soft);
+}
+
+.drawer-steps li::before {
+  content: counter(step);
+  counter-increment: step;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--terracotta);
+}
+
+.drawer-steps {
+  counter-reset: step;
 }
 
 .uni-ticker {
